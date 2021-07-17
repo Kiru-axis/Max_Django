@@ -6,9 +6,10 @@
 {%block content%}
 <div class="container">
     <main>
+        {%if meetup%}
         <article>
-            <img src="" alt="">
-            <section>
+            <img src="{{image}}" alt="{{title}}">
+            <section id="location">
                 <h2>Meetups Location</h2>
                 <address>These meetups takes place in <span>LOCATION</span></address>
             </section>
@@ -25,6 +26,9 @@
                 <!-- registration form -->
             </section>
         </article>
+        {%else%}
+        <p>No meetups found for the slug</p>
+        {%endif%}
     </main>
 </div>
 {%endblock%}

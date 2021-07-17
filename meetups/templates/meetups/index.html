@@ -12,14 +12,11 @@
   <section>
     <h1>Upcoming Meetups</h1>
     <ol>
-      {% if show_meetups %}
       {% for meetup_item in meetups %}
       <!-- with keyword assist in defining the code that is required in the markup but is not present in the includes -->
-      {% include "meetups/includes/meetup-item.html" with title=meetup_item.title location=meetup_item.location %}
-      {% endfor %}
-    {%else %}
-      <p>No meetups found</p>
-    {%endif %}
+       <!-- with keyword assist in defining the code that is required in the markup but is not present in the includes -->
+       {% include "meetups/includes/meetup-item.html" with title=meetup_item.title image=meetup_item.image.url location="Nairobi" slug=meetup_item.slug%}
+       {% endfor %}
     </ol>
   </section>
 </main>
